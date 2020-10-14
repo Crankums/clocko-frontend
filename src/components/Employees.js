@@ -4,7 +4,6 @@ import gql from 'graphql-tag';
 import Gravatar from 'react-gravatar';
 
 
-
 const EMPLOYEES_QUERY = gql`
     query {
         employees{
