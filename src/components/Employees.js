@@ -10,6 +10,9 @@ const EMPLOYEES_QUERY = gql`
             id
             name
             email
+            punches {
+                id
+            }
         }
     }
 `;
@@ -29,7 +32,8 @@ class Employees extends Component{
                                   <div className='px-6 py-4'>
                                     <div className='font-bold text-x1 mb-2'>{employee.name}</div>
                                     <p className='text-grey-darker text-base'>{employee.email}</p>
-                            <p className='text-grey-darker text-base'>{employee.punches ? employee.punches : 'No Punches!'}</p>
+                                    <p className='text-grey-darker text-base'>{employee.punches.length>0 ? employee.punches.length : 'No Punches!'}</p>
+                                    <p>View Timecard</p>
                                   </div>
                                 </div>
                             })}
