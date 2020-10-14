@@ -1,8 +1,10 @@
 import React from 'react';
+import Employees from './Employees'
 
 function App() {
   return (
-    <div className="App">
+    <div className="container mx-auto px-4">
+      <Employees />
     </div>
   );
 }
