@@ -19,6 +19,13 @@ const EMPLOYEES_QUERY = gql`
 `;
 
 class Employees extends Component{
+    updateEmployees = (cache, { data: { createEmployee } }) => {
+        const { employees } = cache.readQuery({ query: EMPLOYEES_QUERY });
+        cache.writeQuery({
+            query: EMPLOYEES_QUERY,
+            data: { employees: employees.concat([createEmployee.employee]) }
+        })
+    }
     render(){
         return (
             <Query query={EMPLOYEES_QUERY}>
