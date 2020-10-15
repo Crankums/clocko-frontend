@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Gravatar from 'react-gravatar';
 import EmployeeAvatar from './EmployeeAvatar';
-
+import CreateEmployee from './CreateEmployee'
 
 const EMPLOYEES_QUERY = gql`
     query {
@@ -27,6 +27,7 @@ class Employees extends Component{
                     if (error) return <div>Error!</div>
                     return(
                         <div className='flex flex-wrap mb-4'>
+                            <Fragment>
                             {data.employees.map((employee) => {
                                 return <div key={employee.id} 
                                             className="m-4 w-1/4 rounded overflow-hidden shadow-lg"
@@ -40,6 +41,10 @@ class Employees extends Component{
                                   </div>
                                 </div>
                             })}
+                            <div className='m-4 w-1/4 rounded overflow-hidden shadow-lg'>
+                                <CreateEmployee onCreateEmployee={this.updateEmployees}/>
+                            </div>
+                            </Fragment>
                         </div>
                     )
                 }}          
