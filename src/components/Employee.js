@@ -1,8 +1,9 @@
+
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag'
 import EmployeeAvatar from './EmployeeAvatar';
 import Punches from './Punches';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 
 const EMPLOYEE_QUERY = gql`
     query Employee($id: ID!) {
