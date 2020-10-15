@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Gravatar from 'react-gravatar';
+import EmployeeAvatar from './EmployeeAvatar';
 
 
 const EMPLOYEES_QUERY = gql`
@@ -27,8 +28,10 @@ class Employees extends Component{
                     return(
                         <div className='flex flex-wrap mb-4'>
                             {data.employees.map((employee) => {
-                                return <div key={employee.id} className="m-4 w-1/4 rounded overflow-hidden shadow-lg">
-                                  <Gravatar email={employee.email} size={150} className="w-full" />
+                                return <div key={employee.id} 
+                                            className="m-4 w-1/4 rounded overflow-hidden shadow-lg"
+                                            onClick={this.props.selectEmployee.bind(this, employee)}>
+                                  <EmployeeAvatar employee={employee} />
                                   <div className='px-6 py-4'>
                                     <div className='font-bold text-x1 mb-2'>{employee.name}</div>
                                     <p className='text-grey-darker text-base'>{employee.email}</p>
