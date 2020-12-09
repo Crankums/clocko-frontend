@@ -4,28 +4,25 @@ class Clock extends Component {
     state = {
         time: new Date()
     }
-
     componentDidMount() {
         this.timerID = setInterval(() => this.tick(), 1000)
     }
-
     componentWillUnmount(){
         clearInterval(this.timerID)
     }
-
     tick(){
         this.setState({
             time: new Date()
         })
     }
-
-
-    render(){
+    render()
+    {
         return (
             <div>
-                <h1>Clock</h1>
-                <h2>{this.state.time.toLocaleTimeString()}</h2>
-
+                Clock
+                <div className='text-2xl w-max font-bold bg-white shadow-md px-3 py-2'>
+                    {this.state.time.toLocaleTimeString()}
+                </div>
             </div>
         )
     }
