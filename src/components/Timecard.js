@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 
 const Timecard = ({ employee }) => (
     <Fragment>
+        This is the timecard
         {/* 
         div w/ border
         map 
@@ -11,3 +12,5 @@ const Timecard = ({ employee }) => (
             clockOut} */}
     </Fragment>
 )
+
+export default Timecard
