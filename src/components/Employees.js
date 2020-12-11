@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import Gravatar from 'react-gravatar';
-import EmployeeAvatar from './EmployeeAvatar';
-import CreateEmployee from './CreateEmployee'
+// import Gravatar from 'react-gravatar';
+import EmployeeAvatar from '../components/EmployeeAvatar';
+import CreateEmployee from '../components/CreateEmployee'
 
 const EMPLOYEES_QUERY = gql`
     query {
