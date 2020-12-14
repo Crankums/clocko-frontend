@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../components/Button'
 import Clock from '../components/Clock'
 
 
 const TimeClock = () => {
 
+
+
+    const [punch, setPunch] = useState('')
+    const [meal, setMeal] = useState(false)
+    
+    const time = new Date()
+
+    const handleClockIn = () => {
+        setPunch(time.toLocaleTimeString)
+    }
+
+    
+
+    // function handleMealStart()  {
+    //     setMeal(true)
+    // }
+
+    
     // clockin function
         // mutation: create clockin
     // clockout function
@@ -14,13 +32,15 @@ const TimeClock = () => {
     // view timecard
     return(
         <div className='border-solid border-2 w-max'>
-            <Clock/>
-            <Button txt={"Clock-in"}/>
+            <Clock />
+            <Button txt={"Clock-in"} handleClockIn={handleClockIn}/>
             <Button txt={"Clock-out"}/>
-            <Button txt={"Break Start"}/>
+            <Button txt={{meal} ? "Meal Start" : "Meal End"}/>
             {/*if break? = true, Button text changes to break end
             break ? Break End : Break Start */}
             <Button txt={"View Timecard"}/>
+            <div>
+            </div>
         </div>
     )
 }
