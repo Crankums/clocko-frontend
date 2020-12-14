@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 // import Clock from './Clock';
 // import Button from './Button';
 import { 
-  BrowserRouter as Router,
   Switch,
   Route
  } from 'react-router-dom'
