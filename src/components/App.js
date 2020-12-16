@@ -30,13 +30,7 @@ class App extends Component  {
           <Route path='/view-employees'>
             <ViewEmployees />
           </Route>
-        {/* <div className='border-solid border-2 w-max'>
-          <Clock />
-          <Button txt={"Clock-in"}/>
-          <Button txt={"Clock-out"}/>
-          <Button txt={"Break Start"}/>
-          <Button txt={"View Timecard"}/>
-        </div> */}
+      
         </Switch>
         <footer className='py-2'> Built following the steps laid out in: <a href="https://mattboldt.com/2019/01/07/rails-and-graphql">https://mattboldt.com/2019/01/07/rails-and-graphql/</a></footer>
       </div>
