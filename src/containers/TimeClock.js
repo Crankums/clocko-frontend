@@ -4,6 +4,8 @@ import Clock from '../components/Clock'
 
 
 const TimeClock = () => {
+    const [clockIn, setClockIn] = useState('')
+    const [clockOut, setClockOut] = useState('')
     const [punch, setPunch] = useState('')
     const [meal, setMeal] = useState(false)
     const [mealText, setMealText] = useState('Meal Start')
@@ -11,11 +13,11 @@ const TimeClock = () => {
     const time = new Date()
 
     const handleClockIn = () => {
-        setPunch(time.toLocaleTimeString())
+        setClockIn(time.toLocaleTimeString())
     }
 
     const handleClockOut = () => {
-        setPunch(time.toLocaleTimeString())
+        setClockOut(time.toLocaleTimeString())
     }
 
     const handleMealStart = () => {
@@ -34,8 +36,8 @@ const TimeClock = () => {
     return(
         <div className='border-solid border-2 w-max'>
             <Clock />
-            <Button txt={"Clock-in"} handleClick={handleClockIn} punch={punch}/>
-            <Button txt={"Clock-out"} handleClick={handleClockOut} punch={punch}/>
+            <Button txt={"Clock-in"} handleClick={handleClockIn} punch={clockIn}/>
+            <Button txt={"Clock-out"} handleClick={handleClockOut} punch={clockOut}/>
             <Button txt={mealText} handleClick={handleMealStart} punch={punch}/>
             {/*if break? = true, Button text changes to break end
             break ? Break End : Break Start */}
